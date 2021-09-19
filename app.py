@@ -17,5 +17,9 @@ def results():
 
     return render_template('results.html', data=res, phrase=search)
 
+@app.route('/stored-peps')
+def peps():
+    return render_template('peps.html')
+
 if __name__ == "__main__":
     app.run(port=5000, debug=True)

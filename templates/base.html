@@ -25,7 +25,7 @@
                     <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a target="blank" href="https://sanctionssearch.ofac.treas.gov/" class="nav-link">OFAC</a>
+                    <a target="blank" href="https://sanctionssearch.ofac.treas.gov/" class="nav-link">More Sanctions</a>
                 </li>
             </ul>
         
@@ -94,7 +94,7 @@
                   
                   
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/stored-peps" class="nav-link">
                       <i class="nav-icon far fa-circle text-info"></i>
                       <p>PEP Database</p>
                     </a>
@@ -104,32 +104,9 @@
               <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
-        </aside>
-
-        <div class="content-wrapper">
-            <section class="content">
-                <div class="container-fluid">
-                    <h2 class="text-center display-4">Search</h2>
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                            <form action="simple-results.html">
-                                <div class="input-group">
-                                    <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-lg btn-default">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        </aside>      
         
-        
-        
+        {% block content %}{% endblock %}
         
     </div>
     <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js')}}"></script>

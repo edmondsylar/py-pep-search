@@ -18,6 +18,10 @@ def index():
 
 @app.route('/search', methods=['GET', 'POST'])
 def results():
+
+    if(request.method == 'GET'):
+        return render_template('index.html', name="main_page")
+
     search = request.form.get('search')
     res = Search(search.replace(" ", "+"), False).get_info()
 

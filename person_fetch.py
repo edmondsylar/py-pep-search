@@ -9,7 +9,7 @@ class Search():
         self.string = string
         self.im = im
         self.identifier_phrases = [
-            'political Party', 'Ugandan Parliament', 'politician', 'government', 'Governemt of Uganda', 'Commissioner-General', 'Commissioner', 'Commissioner General' 'Parliament'
+            'political Party', 'Ugandan Parliament', 'politician', 'government', 'Governemt of Uganda', 'Commissioner-General', 'Commissioner', 'Commissioner General' 'Parliament', 'president', 'President', 'vice president', 'prime minister', 'member of parliament', 'chief justice', 'judge', 'attorney general'
         ]
 
     def get_info(self):

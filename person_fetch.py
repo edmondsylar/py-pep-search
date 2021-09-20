@@ -1,5 +1,6 @@
 import requests
 import json
+from functions import get_birth_date
 
 # Search class
 class Search():
@@ -40,5 +41,6 @@ class Search():
                 if phrase in each['description']:
                     each['PA'] = 'Person Flagged as pep'
                     each['PL'] = each['link']
+                    each['DOB'] = get_birth_date(each['description'])
                     # print (each)
                     self.refined_res.append(each)

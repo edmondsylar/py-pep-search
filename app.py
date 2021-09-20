@@ -1,10 +1,16 @@
 from flask import Flask, render_template, request
 from person_fetch import Search
 import json
+import sqlite3
 
+# initialize and create database.
+DB_NAAME = "PEPS.db"
+def get_database_cnnection():
+    con = sqlite3.connect(DB_NAAME)
 
 # initialize app
 app = Flask(__name__)
+# get_database_cnnection()
 
 @app.route('/')
 def index():

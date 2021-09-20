@@ -10,7 +10,9 @@ class Search():
         self.string = string
         self.im = im
         self.identifier_phrases = [
-            'political Party', 'Ugandan Parliament', 'politician', 'government', 'Governemt of Uganda', 'Commissioner-General', 'Commissioner', 'Commissioner General' 'Parliament', 'president', 'President', 'vice president', 'prime minister', 'member of parliament', 'chief justice', 'judge', 'attorney general'
+            'political Party', 'Ugandan Parliament', 'politician', 'government', 'Governemt of Uganda', 'Commissioner-General',
+            'Commissioner', 'Commissioner General' 'Parliament', 'president', 'President', 'vice president', 'prime minister',
+            'member of parliament', 'chief justice', 'judge', 'attorney general'
         ]
 
     def get_info(self):
@@ -42,5 +44,6 @@ class Search():
                     each['PA'] = 'Person Flagged as pep'
                     each['PL'] = each['link']
                     each['DOB'] = get_birth_date(each['description'])
+                    each['position'] = phrase
                     # print (each)
                     self.refined_res.append(each)

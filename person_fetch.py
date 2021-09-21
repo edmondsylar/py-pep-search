@@ -45,5 +45,6 @@ class Search():
                     each['PL'] = each['link']
                     each['DOB'] = get_birth_date(each['description'])
                     each['position'] = phrase
+                    # each['PIC'] = each['picture']
                     # print (each)
                     self.refined_res.append(each)

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+      <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <h2 class="text-center display-4">Search</h2>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form action="/search" method="POST">
+                        <div class="input-group">
+                            <input type="search" name="search" class="form-control form-control-lg" placeholder="Type PEP Name">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-lg btn-default">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-10 offset-md-1">
+                    <div class="list-group">
+                        
+                        {% for person in data %}
+                            <!-- <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col px-4">
+                                        <div>
+                                            <div class="float-right"> 
+                                                <small> Born: {{ person.DOB }} <br> {{ person.position }} </small>
+                                                <button disabled class="btn btn-danger btn-sm">{{ person.PA }}</button> </div>
+                                            <h3>{{ person.title }}</h3>
+                                            <p class="mb-0">
+                                                {{ person.description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col s12 m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="breadcrumbs">
+                                            <span>{{ person.title }}</span>&nbsp;&nbsp;&nbsp; <button disabled class="btn btn-danger btn-sm">{{ person.PA }}</button>
+                                        </div>
+                                        <div class="center-align search-image-results">
+                                            <img src ="#" class="responsive-img circle center"  alt="Missing Profile Picture" style="width: 60%;height: 50%;" >
+                                            <br>
+                                            <!--<img src="assets/images/signature.png" alt="" class="responsive-img center"  alt="" style="width: 30%; align-content: center;"/>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="tabs-vertical">
+                                            <ul class="tabs transparent z-depth-0">
+                                                    <li class="tab">
+                                                        <a href="#employment" style="color:grey">&nbsp; Employment: <span style="color:black"> {{ person.position }}</span></a>
+                                                    </li>
+                                                    <!-- <li class="tab">
+                                                        <a href="#pictures">&nbsp; Pictures: <span class="right black-text">{{ person.PIC }}</span></a>
+                                                    </li> -->
+                                                    <li class="tab">
+                                                        <a href="#datesofbirth" style="color:grey">&nbsp; Dates of Birth: <span style="color:black">{{ person.DOB }}</span></a>
+                                                    </li>
+                                                    <li class="tab">
+                                                        <a href="#references" style="color:grey">&nbsp; References: <span style="color:blue">{{ person.PL }}</span></a>
+                                                    </li>
+                                                <li class="tab">
+                                                    <a href="#relationships" style="color:grey">&nbsp; Relationships: <span style="color:black"></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+
+
+{% endblock %}

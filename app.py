@@ -17,16 +17,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/search', methods=['GET', 'POST'])
-# def results():
-
-#     if(request.method == 'GET'):
-#         return render_template('index.html', name="main_page")
-
-#     search = request.form.get('search')
-#     res = Search(search.replace(" ", "+"), False).get_info()
-
-#     return render_template('results.html', data=res, phrase=search)
-def display():
+def results():
 
     if(request.method == 'GET'):
         return render_template('index.html', name="main_page")
@@ -34,7 +25,16 @@ def display():
     search = request.form.get('search')
     res = Search(search.replace(" ", "+"), False).get_info()
 
-    return render_template('display.html', data=res, phrase=search)
+    return render_template('results.html', data=res, phrase=search)
+# def display():
+
+#     if(request.method == 'GET'):
+#         return render_template('index.html', name="main_page")
+
+#     search = request.form.get('search')
+#     res = Search(search.replace(" ", "+"), False).get_info()
+
+#     return render_template('display.html', data=res, phrase=search)
 
 @app.route('/stored-peps')
 def peps():

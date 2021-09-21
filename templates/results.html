@@ -26,32 +26,40 @@
                     </form>
                 </div>
             </div>
-
-            <div class="row mt-3">
-                <div class="col-md-10 offset-md-1">
-                    <div class="list-group">
-                        
+            <br>
+            <div class="card card-solid">
+                <div class="card-body pb-0">
+                    <div class="row">
                         {% for person in data %}
-                            <div class="list-group-item">
-                                <div class="row">
-                                    <div class="col px-4">
-                                        <div>
-                                            <div class="float-right"> 
-                                                <small> Born: {{ person.DOB }} <br> {{ person.position }} </small>
-                                                <button disabled class="btn btn-danger btn-sm">{{ person.PA }}</button> </div>
-                                            <h3>{{ person.title }}</h3>
-                                            <p class="mb-0">
-                                                {{ person.description }}
-                                            </p>
+                            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                                <div class="card bg-light d-flex flex-fill">
+                                    <div class="card-header border-bottom-0">
+                                        <small class="disbabled btn btn-xs btn-danger">person flagged as PEP</small>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                    <div class="row">
+                                        <div class="col-7">
+                                        <h2 class="lead"><b>{{person.title}}</b></h2>
+                                        <p class="text-muted text-sm"><b>Employment: </b>{{person.position}}</p>
+
+                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                            <li class="small"><span class="fa-li"><i class="fas fa-sm fa-calendar-alt"></i></span> born {{ person.DOB }}</li>
+                                            <li class="small"><span class="fa-li"><i class="fas fa-sm fa-link"></i></span> Reference:  
+                                                <span style="color:blue"> {{ person.link }} </span></li>
+                                          </ul>
                                         </div>
+                                        <div class="col-5 text-center">
+                                        <img src="{{ person.image }}" alt="user-avatar" class="img-circle img-fluid">
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
-                        
                     </div>
                 </div>
             </div>
+        
         </div>
     </section>
   </div>
